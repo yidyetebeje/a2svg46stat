@@ -80,14 +80,10 @@ export default function Table() {
     useEffect(() => {
         setLoading(true);
         getData().then((res) => {
-            res.map((item) => {
-                console.log(item.totalActiveDays
-                )
-            })
             setData(res);
             setLoading(false);
         })
-    }, [loading]);
+    }, []);
     const [globalFilter, setGlobalFilter] = React.useState('')
     const [sorting, setSorting] = React.useState<SortingState>([])
     const rerender = React.useReducer(() => ({}), {})[1];
@@ -114,7 +110,9 @@ export default function Table() {
                 className="p-2 font-lg shadow border border-block"
                 placeholder="Search all columns..."
             />
-            
+            {loading && <div className="flex flex-row justify-center">
+                <div className="spinner"></div>
+            </div>}
             {data && <table className='table w-4/5 table-compact table-zebra m-auto'>
                 <thead>
                     {table.getHeaderGroups().map(headerGroup => (
@@ -180,9 +178,7 @@ export default function Table() {
                     ))}
                 </tfoot>
             </table>}
-            {loading && <div className="flex flex-row justify-center">
-                <div className="spinner"></div>
-            </div>}
+            
             <div className="h-4" />
             
         </div>
