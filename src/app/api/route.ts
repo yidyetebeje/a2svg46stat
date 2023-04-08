@@ -5,8 +5,7 @@ import { type NextRequest } from 'next/server'
 import { LeetCode, UserProfile } from 'leetcode-query';
 import * as group46 from '@/data/a2svgroup45.json';
 import { user } from '@/interfaces/user';
-export const revalidate = 60 * 60 * 24;
-export const dynamic = "force-cache";
+export const dynamic = "force-dynamic";
 
 export async function GET(request: NextRequest) {
     try {
