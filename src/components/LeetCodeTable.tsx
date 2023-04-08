@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { DebouncedInput } from './DebounceInput';
 import Pagination from './Pagination';
 import Paginations from './Pagination';
+export const dynamic = "force-dynamic";
 async function getData(): Promise<leetcoderes[]>{
     const url = new URL('http://localhost:3000/api');
     const data = await fetch(url, {
