@@ -5,6 +5,8 @@ import { createColumnHelper, flexRender, getCoreRowModel, getFilteredRowModel, g
 import React from 'react';
 
 import { DebouncedInput } from './DebounceInput';
+import { Stat } from './Stat';
+import { LandingPage } from './LandingPage';
 export const dynamic = "force-dynamic";
 async function getData(): Promise<leetcoderes[]>{
     const data = await fetch("/api", {
@@ -75,13 +77,43 @@ const defaultColumns = [
 export default function Table() {
     const [data, setData] = useState<leetcoderes[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
+    const [average, setAverage] = useState<leetcoderes>({} as leetcoderes);
     useEffect(() => {
         setLoading(true);
         getData().then((res) => {
             setData(res);
+            setAverage(averageCalc(res));
             setLoading(false);
         })
     }, []);
+    const averageCalc = (res:leetcoderes[]) => {
+        let easy = 0;
+        let medium = 0;
+        let hard = 0;
+        let total = 0;
+        let totalsub = 0;
+        let currentStreak = 0;
+        let totalActiveDays = 0;
+        res?.forEach((user) => {
+            easy += user.easy || 0;
+            medium += user.medium || 0;
+            hard += user.hard || 0;
+            total += user.total || 0;
+            totalsub += user.totalsub || 0;
+            currentStreak += user.currentStreak || 0;
+            totalActiveDays += user.totalActiveDays || 0;
+        })
+        return {
+            Name: "Average",
+            easy: easy / res.length,
+            medium: medium / res.length,
+            hard: hard / res.length,
+            total: total / res.length,
+            totalsub: totalsub / res.length,
+            currentStreak: currentStreak / res.length,
+            totalActiveDays: totalActiveDays / res.length,
+        }
+    }
     const [globalFilter, setGlobalFilter] = React.useState('')
     const [sorting, setSorting] = React.useState<SortingState>([])
     const rerender = React.useReducer(() => ({}), {})[1];
@@ -102,6 +134,11 @@ export default function Table() {
     })
     return (
         <div className="overflow-x-auto w-full flex flex-col place-content-center ">
+            <LandingPage>
+                {loading ? "loading":
+                    <Stat avg={average} />}
+            </LandingPage>
+           
             <DebouncedInput
                 value={globalFilter ?? ''}
                 onChange={value => setGlobalFilter(String(value))}
