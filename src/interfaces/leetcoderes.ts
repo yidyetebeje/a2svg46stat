@@ -19,3 +19,30 @@ interface calendar {
     date: string;
     count: number;
 }
+
+export interface Root {
+    data: Data
+}
+
+export interface Data {
+    matchedUser: MatchedUser
+}
+
+export interface MatchedUser {
+    submitStats: SubmitStats
+}
+
+export interface SubmitStats {
+    acSubmissionNum: AcSubmissionNum[]
+    totalSubmissionNum: TotalSubmissionNum[]
+}
+
+export interface AcSubmissionNum {
+    difficulty: string
+    count: number
+}
+
+export interface TotalSubmissionNum {
+    difficulty: string
+    submissions: number
+}

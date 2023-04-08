@@ -1,3 +1,4 @@
+import { Root } from "@/interfaces/leetcoderes";
 
 export async function fecthCalendar(username: string) {
     const body = {
@@ -21,6 +22,29 @@ export async function fecthCalendar(username: string) {
         'cache': 'no-store',
     })
     const data = await response.json();
-    console.log(data.data.matchedUser.userCalendar.streak, username)
+    return data;
+}
+export async function fetchSubmissionStats(username: string) {
+    const body = {
+        operationName: "userProfileSubmissionStats",
+        variables: {
+            username,
+        },
+        query: "\n    query userProfileSubmissionStats($username: String!) {\n  matchedUser(username: $username) {\n    submitStats {\n      acSubmissionNum {\n        difficulty\n        count\n      }\n      totalSubmissionNum {\n        difficulty\n        submissions\n      }\n    }\n  }\n}\n    "
+    }
+    const response = await fetch("https://leetcode.com/graphql", {
+        "headers": {
+            "accept": "*/*",
+            "accept-language": "en-US,en;q=0.9",
+            "content-type": "application/json",
+            "sec-fetch-dest": "empty",
+            "sec-fetch-mode": "cors",
+            "sec-fetch-site": "same-origin"
+        },
+        "body": JSON.stringify(body),
+        "method": "POST",
+        'cache': 'no-store',
+    })
+    const data = await response.json() as Root;
     return data;
 }
