@@ -6,7 +6,7 @@ import { LeetCode, UserProfile } from 'leetcode-query';
 import * as group46 from '@/data/a2svgroup45.json';
 import { user } from '@/interfaces/user';
 export const revalidate = 0;
-export const dynamic = true;
+export const dynamic = "force-dynamic";
 
 export async function GET(request: NextRequest) {
     try {
