@@ -8,7 +8,7 @@ import { LandingPage } from '@/components/LandingPage';
 import ActiveDaysTable from '@/components/ActiveDaysTable';
 const inter = Inter({ subsets: ['latin'] })
 
-
+export const dynamic = true;
 export default async function Home() {
   return (
     <main className='flex w-full flex-col align-middle justify-center'>

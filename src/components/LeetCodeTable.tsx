@@ -87,7 +87,7 @@ export default function Table() {
             setData(res);
             setLoading(false);
         })
-    }, []);
+    }, [loading]);
     const [globalFilter, setGlobalFilter] = React.useState('')
     const [sorting, setSorting] = React.useState<SortingState>([])
     const rerender = React.useReducer(() => ({}), {})[1];
@@ -114,7 +114,8 @@ export default function Table() {
                 className="p-2 font-lg shadow border border-block"
                 placeholder="Search all columns..."
             />
-            <table className='table w-4/5 table-compact table-zebra m-auto'>
+            
+            {data && <table className='table w-4/5 table-compact table-zebra m-auto'>
                 <thead>
                     {table.getHeaderGroups().map(headerGroup => (
                         <tr key={headerGroup.id}>
@@ -141,7 +142,7 @@ export default function Table() {
                                                     desc: ' 🔽',
                                                 }[header.column.getIsSorted() as string] ?? null}
                                             </div>
-                                        ) }
+                                        )}
                                 </th>
                             ))}
                         </tr>
@@ -151,15 +152,15 @@ export default function Table() {
                     {table.getRowModel().rows.map((row, index) => (
                         <tr key={row.id} className="hover">
                             
-                                <td>{index + 1}</td>
-                                {row.getVisibleCells().map(cell => (
-                                    <>
-                                        <td key={cell.id}>
-                                {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                                        </td>
-                                    </>
-                                ))}
-                            </tr>
+                            <td>{index + 1}</td>
+                            {row.getVisibleCells().map(cell => (
+                                <>
+                                    <td key={cell.id}>
+                                        {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                                    </td>
+                                </>
+                            ))}
+                        </tr>
                     ))}
                 </tbody>
                 <tfoot>
@@ -178,7 +179,7 @@ export default function Table() {
                         </tr>
                     ))}
                 </tfoot>
-            </table>
+            </table>}
             {loading && <div className="flex flex-row justify-center">
                 <div className="spinner"></div>
             </div>}
