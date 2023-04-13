@@ -4,8 +4,6 @@ import CodeForceContestProgressTable from "@/components/CodeForceContestProgress
 import CodeForceCard from "@/components/CodeForcesCard";
 
 import LeetCodeSubmissionChart from "@/components/LeetCodeSubmissionChart";
-import NivoCalendarMap from "@/components/NivoCalendarMap";
-import { calData } from "@/components/nivodata";
 import ProfileCard from "@/components/ProfileCard";
 import RecentSubCard from "@/components/RecentSubCard";
 import { useRouter } from "next/navigation";
