@@ -8,7 +8,7 @@ import ProfileCard from "@/components/ProfileCard";
 import RecentSubCard from "@/components/RecentSubCard";
 import { useRouter } from "next/navigation";
 import { Suspense } from "react";
-
+export const dynamic = 'force-dynamic'
 export default async function Page({params}: {params: {user: string}}) {
     const username = params.user;
     const infoSheetProfile = getUsers();
