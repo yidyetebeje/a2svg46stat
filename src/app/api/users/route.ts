@@ -13,6 +13,7 @@ export interface Res {
     activeDays: Cal[];
     user: string;
 }
+export const dynamic = 'force-dynamic'
 export async function GET(request: NextRequest) {
     const url = new URL(request.url);
     const recievedMonth = url.searchParams.get("month") || new Date().getMonth().toString();

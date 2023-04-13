@@ -61,7 +61,9 @@ export default function LeetCodeSubmissionChart({username}: {username: string}) 
         fetchData();
     }, [])
     const fetchData = async () => {
-        let data = await fetch(`/api/users/${username}`);
+        let data = await fetch(`/api/users/${username}`, {
+            cache: 'no-store',
+        });
         let d = await data.json() as LeetCodeUserResponse;
         let result = d.aggregateSubByMonth;
         result.sort((a, b) => {

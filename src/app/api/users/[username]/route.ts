@@ -6,6 +6,7 @@ import { Cal } from '../route';
 import group46 from "../../../../data/a2svgroup45.json"
 import { getUsers } from '../../route';
 import { user } from '@/interfaces/user';
+export const dynamic = 'force-dynamic'
 export interface LeetCodeUserResponse {
     aggregateSubByMonth: MonthSub[];
     recentSubs: any;
