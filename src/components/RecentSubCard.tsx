@@ -14,7 +14,7 @@ export default async function RecentSubCard({username}: {username: string}) {
             <h1 className="text-xl font-bold py-2 px-4">LeetCode Recent Activity</h1>
             {data.map((sub: any | RecentSubmission) => {
                 return (
-                    <a href={`https://leetcode.com/submissions/detail/${sub.id}/`} target="_blank" aria-current="true" className="grid grid-cols-2 justify-between items-center  w-full px-4 py-2 text-white bg-blue-700 border-b border-gray-200 cursor-pointer dark:bg-gray-800 dark:border-gray-600">
+                    <a href={`https://leetcode.com/submissions/detail/${sub.id}/`} target="_blank" key={sub.id}  aria-current="true" className="grid grid-cols-2 justify-between items-center  w-full px-4 py-2 text-white bg-blue-700 border-b border-gray-200 cursor-pointer dark:bg-gray-800 dark:border-gray-600">
                         <div>
                             <p className="text-sm font-bold">{sub.title}</p>
                             {sub.statusDisplay === "Accepted" ? <p className="text-green-500 font-semiBold">{sub.statusDisplay}</p> : <p className="text-red-500 font-semiBold">{sub.statusDisplay}</p>}

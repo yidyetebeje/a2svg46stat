@@ -33,7 +33,7 @@ export default async function CodeForceContestProgressTable({username}: {usernam
                 </thead>
                 <tbody>
                     {data?.map((contest, i) => (
-                        <tr>
+                        <tr key={i}>
                             <td>{i + 1}</td>
                             <td>{contest.contestName.replace('Afternoon',"").replace("Morning", "").replace("Weekly", "")}</td>
                             <td>{contest.globalRank}</td>
