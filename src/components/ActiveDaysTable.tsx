@@ -3,7 +3,68 @@ import { Cal, Res } from "@/app/api/users/route";
 import { loadGetInitialProps } from "next/dist/shared/lib/utils";
 import { useEffect, useState } from "react";
 import Select from "./Select";
-
+export const monthOptions = [
+    {
+        value: "January",
+        key: "01",
+        abbr: "Jan",
+    },
+    {
+        value: "February",
+        key: "02",
+        abbr: "Feb",
+    },
+    {
+        value: "March",
+        key: "03",
+        abbr: "Mar",
+    },
+    {
+        value: "April",
+        key: "04",
+        abbr: "Apr",
+    },
+    {
+        value: "May",
+        key: "05",
+        abbr: "May",
+    },
+    {
+        value: "June",
+        key: "06",
+        abbr: "Jun",
+    },
+    {
+        value: "July",
+        key: "07",
+        abbr: "Jul",
+    },
+    {
+        value: "August",
+        key: "08",
+        abbr: "Aug",
+    },
+    {
+        value: "September",
+        key: "09",
+        abbr: "Sep",
+    },
+    {
+        value: "October",
+        key: "10",
+        abbr: "Oct",
+    },
+    {
+        value: "November",
+        key: "11",
+        abbr: "Nov",
+    },
+    {
+        value: "December",
+        key: "12",
+        abbr: "Dec",
+    },
+];
 
 export default function ActiveDaysTable() {
     const [data, setData] = useState<Res[]>([]);
@@ -25,68 +86,7 @@ export default function ActiveDaysTable() {
         }
         return true;
     }
-    const monthOptions = [
-        {
-            value: "January",
-            key: "01",
-            abbr: "Jan",
-        },
-        {
-            value: "February",
-            key: "02",
-            abbr: "Feb",
-        },
-        {
-            value: "March",
-            key: "03",
-            abbr: "Mar",
-        },
-        {
-            value: "April",
-            key: "04",
-            abbr: "Apr",
-        },
-        {
-            value: "May",
-            key: "05",
-            abbr: "May",
-        },
-        {
-            value: "June",
-            key: "06",
-            abbr: "Jun",
-        },
-        {
-            value: "July",
-            key: "07",
-            abbr: "Jul",
-        },
-        {
-            value: "August",
-            key: "08",
-            abbr: "Aug",
-        },
-        {
-            value: "September",
-            key: "09",
-            abbr: "Sep",
-        },
-        {
-            value: "October",
-            key: "10",
-            abbr: "Oct",
-        },
-        {
-            value: "November",
-            key: "11",
-            abbr: "Nov",
-        },
-        {
-            value: "December",
-            key: "12",
-            abbr: "Dec",
-        },
-    ];
+    
     const yearOptions = [
         {
             value: "2021",

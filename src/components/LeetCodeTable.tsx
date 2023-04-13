@@ -7,15 +7,13 @@ import React from 'react';
 import { DebouncedInput } from './DebounceInput';
 import { Stat } from './Stat';
 import { LandingPage } from './LandingPage';
+import { useRouter } from 'next/navigation';
 export const dynamic = "force-dynamic";
 async function getData(): Promise<leetcoderes[]>{
-    const data = await fetch("/api", {
-        cache: 'no-store'
-    });
+    const data = await fetch("/api");
     let res: {
         res: leetcoderes[];
     } = await data.json();
-    console.log(res);
     return res.res;
 }
 const columnHelper = createColumnHelper<leetcoderes>();
@@ -75,6 +73,7 @@ const defaultColumns = [
     }),
 ]
 export default function Table() {
+    const router = useRouter();
     const [data, setData] = useState<leetcoderes[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [average, setAverage] = useState<leetcoderes>({} as leetcoderes);
@@ -183,8 +182,7 @@ export default function Table() {
                 </thead>
                 <tbody>
                     {table.getRowModel().rows.map((row, index) => (
-                        <tr key={row.id} className="hover">
-                            
+                        <tr key={row.id} className="cursor-pointer" onClick={()=> router.push(`/UserDetail/${row.original.username}`)}> 
                             <td>{index + 1}</td>
                             {row.getVisibleCells().map(cell => (
                                 <>

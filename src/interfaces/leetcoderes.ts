@@ -46,3 +46,15 @@ export interface TotalSubmissionNum {
     difficulty: string
     submissions: number
 }
+
+export interface RecentAcSubmissionList {
+    id: number
+    title: string
+    titleSlug: string
+    timestamp: number
+}
+export interface LeetCodeUser {
+    ranking: number;
+    username: string;
+    userAvatar: string;
+}

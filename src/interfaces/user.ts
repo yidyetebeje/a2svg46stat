@@ -10,4 +10,5 @@ export interface user {
     Codeforces: string;
     SubmissionRepository: string;
     PreferredLanguage: string;
+    ShortBio: string;
 }
