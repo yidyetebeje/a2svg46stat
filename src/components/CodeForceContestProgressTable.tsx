@@ -37,7 +37,7 @@ export default async function CodeForceContestProgressTable({username}: {usernam
                             <td>{i + 1}</td>
                             <td>{contest.contestName.replace('Afternoon',"").replace("Morning", "").replace("Weekly", "")}</td>
                             <td>{contest.globalRank}</td>
-                            <td>{contest.localRank > 0 ? contest.localRank : <p className="text-red-600 font-semibold">"Absent" | "No data available"</p>}</td>
+                            <td>{contest.localRank > 0 ? contest.localRank : <p className="text-red-600 font-semibold">Absent | No data available</p>}</td>
                             <td>{contest.solved}</td>
                             <td>{contest.penalty}</td>
                        </tr>
