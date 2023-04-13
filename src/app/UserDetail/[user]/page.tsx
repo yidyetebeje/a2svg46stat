@@ -14,7 +14,7 @@ export default async function Page({params}: {params: {user: string}}) {
     const infoSheetProfile = getUsers();
     let codeforces = infoSheetProfile.mp.get(username)?.Codeforces.split("/").slice(-1)[0] as string;
     return (
-        <div className="flex gap-4 w-4/5 mx-auto flex-row mt-4
+        <div className="flex gap-4 w-4/5 mx-auto flex-row mt-4 
         " >
             <div className="w-1/4 h-screen gap-4 flex flex-col">
                 <ProfileCard username={username} />
