@@ -2,12 +2,13 @@ import { formatTimeAgo } from "@/utils/TimeFormater";
 import { RecentSubmission } from "leetcode-query";
 
 async function getData(username: string) {
-    const res = await fetch(`http://127.0.0.1:3000/api/users/${username}`, {
+    const res = await fetch(`https://a2svg46stat.vercel.app/api/users/${username}`, {
         cache: 'no-store',
     })
     const data = await res.json()
     return data.recentSubs as RecentSubmission[] | any;
 }
+export const dynamic = 'force-dynamic'
 export default async function RecentSubCard({username}: {username: string}) {
     let data = await getData(username);
     return (

@@ -2,13 +2,14 @@ import { CodeforceStatRes } from "@/app/api/codeforces/[username]/route";
 import { Suspense } from "react";
 import CodeForcesIcon from "./Icons/CodeForce";
 async function getData(username: string) {
-    const data = await fetch(`http://127.0.0.1:3000/api/codeforces/${username}`, 
+    const data = await fetch(`https://a2svg46stat.vercel.app/api/codeforces/${username}`, 
          {
         cache: 'no-store',
         }
     );
     return await data.json() as CodeforceStatRes;
 }
+export const dynamic = 'force-dynamic'
 export default async function CodeForceCard({username}: {username: string}) {
     const data = await getData(username);
     console.log(data, "data recieved");

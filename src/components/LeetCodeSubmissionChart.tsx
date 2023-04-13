@@ -16,7 +16,7 @@ import { Bar, Line } from 'react-chartjs-2';
 import { faker } from '@faker-js/faker';
 import { LeetCodeUserResponse, MonthSub } from '@/app/api/users/[username]/route';
 import { monthOptions } from './ActiveDaysTable';
-
+export const dynamic = 'force-dynamic'
 ChartJS.register(
     CategoryScale,
     LinearScale,

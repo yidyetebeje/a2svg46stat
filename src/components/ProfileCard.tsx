@@ -3,8 +3,9 @@ import { LeetCodeUserResponse } from "@/app/api/users/[username]/route";
 import { user } from "@/interfaces/user";
 import CodeForcesIcon from "./Icons/CodeForce";
 import HackerRankLogo from "./Icons/HackerRank";
-
+export const dynamic = 'force-dynamic'
 export default function ProfileCard({ username }: { username: string }) {
+    
     const infoSheetProfiles = getUsers();
     const infoSheetProfile = infoSheetProfiles.mp.get(username) as user;
     let profile: user = infoSheetProfile;

@@ -2,7 +2,7 @@ import { ContestHistory } from "@/app/api/tests/route";
 import { Suspense } from "react";
 async function getData(username: string) {
     try {
-        const data = await fetch(`http://127.0.0.1:3000/api/tests?username=${username}`,
+        const data = await fetch(`https://a2svg46stat.vercel.app/api/tests?username=${username}`,
             {
                 cache: 'no-store',
             }
@@ -37,7 +37,7 @@ export default async function CodeForceContestProgressTable({username}: {usernam
                             <td>{i + 1}</td>
                             <td>{contest.contestName.replace('Afternoon',"").replace("Morning", "").replace("Weekly", "")}</td>
                             <td>{contest.globalRank}</td>
-                            <td>{contest.localRank}</td>
+                            <td>{contest.localRank > 0 ? contest.localRank : <p className="text-red-600 font-semibold">"Absent"</p>}</td>
                             <td>{contest.solved}</td>
                             <td>{contest.penalty}</td>
                        </tr>
