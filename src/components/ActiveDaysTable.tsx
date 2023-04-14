@@ -166,8 +166,9 @@ export default function ActiveDaysTable() {
             {loading && <div className="flex flex-row justify-center"> 
                 <div className="spinner"></div>
                 </div>}
-            {data && <div className="flex flex-col place-content-center">
-                <table className="table w-4/5 table-compact table-zebra m-auto">
+            {data && <div className="flex flex-col place-content-center overflow-x-auto">
+                <h1 className="text-center text-2xl font-bold">Active Days</h1>
+                <table className="table w-4/5 table-compact table-zebra m-auto overflow-x-auto">
                     <thead>
                         <tr>
                             <th>Username</th>

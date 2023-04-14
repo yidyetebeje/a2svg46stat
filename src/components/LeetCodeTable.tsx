@@ -144,10 +144,12 @@ export default function Table() {
                 className="p-2 font-lg shadow border border-block"
                 placeholder="Search all columns..."
             />
+            <h1 className="text-center text-2xl font-bold">Leetcode Stats</h1>
             {loading && <div className="flex flex-row justify-center">
                 <div className="spinner"></div>
             </div>}
-            {data && <table className='table w-4/5 table-compact table-zebra m-auto'>
+            {data &&
+                <table className='table w-4/5 table-compact table-zebra m-auto'>
                 <thead>
                     {table.getHeaderGroups().map(headerGroup => (
                         <tr key={headerGroup.id}>
@@ -182,7 +184,7 @@ export default function Table() {
                 </thead>
                 <tbody>
                     {table.getRowModel().rows.map((row, index) => (
-                        <tr key={row.id} className="cursor-pointer" onClick={()=> router.push(`/UserDetail/${row.original.username}`)}> 
+                        <tr key={row.id} className="cursor-pointer hover" onClick={()=> router.push(`/UserDetail/${row.original.username}`)}> 
                             <td>{index + 1}</td>
                             {row.getVisibleCells().map(cell => (
                                 <>

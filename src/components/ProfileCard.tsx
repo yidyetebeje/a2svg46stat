@@ -13,9 +13,9 @@ export default function ProfileCard({ username }: { username: string }) {
     return (
         <section
             className="w-full p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-            <div className="mx-auto max-w-3xl flex flex-col gap-2">
+            <div className="w-full flex flex-col gap-2 flex-wrap">
                 <h2 className="mb-2 text-xl font-semibold leading-none text-gray-900 md:text-2xl dark:text-white">Profile</h2>
-                <dl className="flex flex-col">
+                <dl className="flex flex-col flex-wrap">
                     <div className="flex gap-2 align-baseline items-center">
 
                         <dd className="font-light text-gray-500 dark:text-gray-400">Name</dd>
@@ -36,7 +36,7 @@ export default function ProfileCard({ username }: { username: string }) {
                 </dl>
                 <dl className="mt-3">
                     <dt className="mb-2 font-semibold leading-none text-gray-900 dark:text-white">bio</dt>
-                    <dd className="mb-4 font-light text-gray-500 sm:mb-5 dark:text-gray-400">{profile.ShortBio}
+                    <dd className="mb-4 font-light text-gray-500 sm:mb-5 dark:text-gray-400 text-justify">{profile.ShortBio}
                     </dd>
                 </dl>
                 <div className="flex">

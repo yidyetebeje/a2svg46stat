@@ -14,14 +14,13 @@ export default async function Page({params}: {params: {user: string}}) {
     const infoSheetProfile = getUsers();
     let codeforces = infoSheetProfile.mp.get(username)?.Codeforces.split("/").slice(-1)[0] as string;
     return (
-        <div className="flex gap-4 w-4/5 mx-auto flex-row mt-4 
-        " >
-            <div className="w-1/4 h-screen gap-4 flex flex-col">
+        <div className="flex gap-4 w-screen lg:w-11/12 mx-auto flex-col lg:flex-row mt-4" >
+            <div className="w-full lg:w-1/4 lg:h-screen gap-4 flex flex-col md:flex-row lg:flex-col">
                 <ProfileCard username={username} />
                 {/* @ts-expect-error Async Server Component */}
                 <CodeForceCard username={codeforces} />
             </div>
-            <div className="w-3/4 flex flex-col gap-4 overflow-y-auto">
+            <div className="w-full lg:w-3/4 flex flex-col gap-4 overflow-y-auto">
                 <img src={`https://leetcard.jacoblin.cool/${username}?ext=heatmap`} className="w-full" />
                 {/* @ts-expect-error Async Server Component */}
                 <CodeForceContestProgressTable username={codeforces} />

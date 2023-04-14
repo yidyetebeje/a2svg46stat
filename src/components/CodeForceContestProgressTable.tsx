@@ -20,22 +20,23 @@ export default async function CodeForceContestProgressTable({username}: {usernam
     console.log(data);
     return (
         <div className="overflow-x-auto">
-            <table className="table table-compact w-full">
+            <h1 className="text-xl font-bold py-2 px-4">CodeForces Contest Progress</h1>
+            <table className="table table-compact w-full table-zebra">
                 <thead>
-                    <tr>
+                    <tr className="text-sm">
                         <th></th>
                         <th>Name</th>
                         <th>Global</th>
                         <th>Local</th>
-                        <th>Solved in Contest</th>
+                        <th>Solved</th>
                         <th>Penality</th>
                     </tr>
                 </thead>
                 <tbody>
                     {data?.map((contest, i) => (
-                        <tr key={i}>
+                        <tr key={i} className="text-sm">
                             <td>{i + 1}</td>
-                            <td>{contest.contestName.replace('Afternoon',"").replace("Morning", "").replace("Weekly", "")}</td>
+                            <td className="font-bold first-letter:uppercase text-left">{contest.contestName.replace('Afternoon',"").replace("Morning", "").replace("Weekly", "")}</td>
                             <td>{contest.globalRank}</td>
                             <td>{contest.localRank > 0 ? contest.localRank : <p className="text-red-600 font-semibold">Absent | No data available</p>}</td>
                             <td>{contest.solved}</td>
