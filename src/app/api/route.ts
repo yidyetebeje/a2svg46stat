@@ -24,9 +24,9 @@ export async function GET(request: NextRequest) {
                 mediumsub: user.data.matchedUser?.submitStats.totalSubmissionNum.filter((u) => u['difficulty'] == "Medium")[0].submissions,
                 hardsub: user.data.matchedUser?.submitStats.totalSubmissionNum.filter((u) => u['difficulty'] == "Hard")[0].submissions,
                 totalsub: user.data.matchedUser?.submitStats.totalSubmissionNum.filter((u) => u['difficulty'] == "All")[0].submissions,
-                currentStreak: calendar.data.matchedUser.userCalendar.streak,
-                totalActiveDays: calendar.data.matchedUser.userCalendar.totalActiveDays,
-                submissionCalendar: calendar.data.matchedUser.userCalendar.submissionCalendar
+                currentStreak: calendar.data.matchedUser?.userCalendar?.streak,
+                totalActiveDays: calendar.data.matchedUser?.userCalendar?.totalActiveDays,
+                submissionCalendar: calendar.data.matchedUser?.userCalendar?.submissionCalendar
             };
             res.push(userres);
         }));

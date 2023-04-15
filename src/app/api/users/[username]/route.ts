@@ -18,7 +18,7 @@ export async function GET(request: NextRequest) {
     try {
         const username = "yidnekachewtebeje";
         const { calendar, submissionStats, recentSub, userProfile } = await fetchLeetcodeData("yidnekachewtebeje");
-        const cal = JSON.parse(calendar.data.matchedUser.userCalendar.submissionCalendar) as Cal;
+        const cal = JSON.parse(calendar.data.matchedUser?.userCalendar?.submissionCalendar) as Cal;
         const subStats = submissionStats.data.matchedUser.submitStats;
         const recentSubs = recentSub;
         const aggregateSubByMonth = aggregateSubmission(cal);

@@ -36,7 +36,7 @@ export async function GET(request: NextRequest) {
 
 async function userCalendar(recievedMonth: string, recievedYear: string, username: string) {
     let calendar = await fecthCalendar(username);
-    let activeDays = JSON.parse(calendar.data.matchedUser.userCalendar.submissionCalendar);
+    let activeDays = JSON.parse(calendar.data.matchedUser?.userCalendar?.submissionCalendar);
     activeDays = activeDays;
     let days = Object.entries(activeDays);
     // change unix time to date
