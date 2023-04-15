@@ -108,7 +108,9 @@ export default function ActiveDaysTable() {
     useEffect(() => {
         setLoading(true);
         setData([]);
-        fetch(`/api/users?month=${parseInt(month) - 1}&year=${year}`)
+        fetch(`/api/users?month=${parseInt(month) - 1}&year=${year}`, {
+            cache: "no-store"
+        })
             .then(res => res.json())
             .then(data => {
                 setData(data.res);

@@ -10,7 +10,9 @@ import { LandingPage } from './LandingPage';
 import { useRouter } from 'next/navigation';
 export const dynamic = "force-dynamic";
 async function getData(): Promise<leetcoderes[]>{
-    const data = await fetch("/api");
+    const data = await fetch("/api", {
+        cache: "no-store"
+    });
     let res: {
         res: leetcoderes[];
     } = await data.json();

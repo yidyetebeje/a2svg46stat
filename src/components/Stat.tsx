@@ -2,7 +2,7 @@ import { leetcoderes } from "@/interfaces/leetcoderes";
 
 export function Stat({ avg }: { avg: leetcoderes }) {
     return (
-        <div className="flex flex-col w-full lg:w-2/3 gap-4">
+        <div className="hidden md:flex flex-col w-full lg:w-2/3 gap-4">
             <div className="stats stats-horizontal shadow">
 
                 <div className="stat">
