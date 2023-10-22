@@ -42,14 +42,6 @@ npm install
 npm start
 ```
 
-## Usage
-
-To use this project, follow these steps:
-
-1. [Step One]
-2. [Step Two]
-3. [Step Three]
-
 ## Deployed Website
 
 The project is deployed and can be accessed [here](https://a2svg46stat.vercel.app/).
