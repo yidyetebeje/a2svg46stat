@@ -1,37 +1,72 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# A2SV G46 Stats
+
+This repository contains the source code for the Africa to Silicon Valley (A2SV) G46 Stats project. The project is a web application that displays statistics about the A2SV G46 cohort. The data has been extracted from the Leetcode handles of the cohort members.
+
+## Tech Stack
+
+- Frontend: Next.JS with TypeScript
+- Backend: Firebase
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+To run this project locally, you'll need:
+
+- Node.js
+- npm
+
+### Installation
+
+1. Clone the repository:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+git clone https://github.com/yidyetebeje/a2sv-g46-stats.git
 ```
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+2. Install dependencies:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+```bash
+npm install
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+3. Set up Firebase:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+   - [Firebase Documentation](https://firebase.google.com/docs)
 
-## Learn More
+4. Configure Firebase credentials in the project.
 
-To learn more about Next.js, take a look at the following resources:
+5. Start the application:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Usage
 
-## Deploy on Vercel
+To use this project, follow these steps:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. [Step One]
+2. [Step Two]
+3. [Step Three]
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Deployed Website
+
+The project is deployed and can be accessed [here](https://a2svg46stat.vercel.app/).
+
+## Contributing
+
+If you would like to contribute to this project, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature: `git checkout -b feature-new-feature`.
+3. Make your changes and commit them: `git commit -m 'Add new feature'`.
+4. Push to the branch: `git push origin feature-new-feature`.
+5. Create a pull request.
+
+## Acknowledgements
+
+We would like to acknowledge the following resources and tools that were used in the development of this project:
+
+- [Next.js](https://nextjs.org/)
+- [Firebase](https://firebase.google.com/)
